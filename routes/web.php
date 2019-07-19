@@ -11,15 +11,16 @@
 |
 */
 
-Route::get('/', 'HomeController@index')->name('index');
+Route::get('/', 'HomeController@index')->name('home');
 
 // 登录
 Route::get('/login', 'LoginController@index')->name('index'); // page
-Route::post('login', 'SessionsController@store')->name('login'); // form
-Route::delete('logout', 'SessionsController@destroy')->name('logout'); // 登出
+Route::post('login', 'LoginController@store')->name('login'); // form
+Route::delete('logout', 'LoginController@destroy')->name('logout'); // 登出
 
 // 课程
 Route::get('/courses', 'CoursesController@index')->name('index');
 
 // User
 Route::resource('users', 'UsersController');
+Route::get('signup', 'UsersController@create')->name('signup');
