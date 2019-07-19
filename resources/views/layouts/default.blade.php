@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="cn">
 
 <head>
     <title>@yield('title', 'RealX') - 课程系统</title>
