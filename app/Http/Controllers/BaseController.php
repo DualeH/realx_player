@@ -29,12 +29,16 @@ class BaseController extends Controller
     {
         $token = $request->header('token', '');
         if ($token == '') {
+            echo '登录';
+                exit;
             Rest::msg(403, 'token不能为空');
         } else {
             $check_result  = self::checkTokenResult($token);
             // token 失效 跳转登录
             if (!$check_result) {
-                Rest::err(403);
+                echo '登录';
+                exit;
+                // Rest::err(403);
             }
         }
     }
