@@ -8,6 +8,8 @@ class HomeController extends BaseController
   
   public function home()
   {
-    Article::first();
+    $articles = Article::first();
+    
+    require dirname(__FILE__).'/../views/home.php';
   }
 }
