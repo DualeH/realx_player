@@ -55,6 +55,7 @@ class UsersController extends Controller
      */
     public function edit(User $user)
     {
+        // 调用策略
         $this->authorize('update', $user);
         return view('users.edit', compact('user'));
     }
